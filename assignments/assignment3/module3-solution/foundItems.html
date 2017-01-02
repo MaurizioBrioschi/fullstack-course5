@@ -1,0 +1,15 @@
+
+<div class="grid">
+  <div ng-if="!search.isEmpty()" class="row">
+  <h3>Items found:</h3>
+  <ol>
+    <li ng-repeat="result in search.found">
+      <strong>{{result.name}} ({{result.short_name}})</strong><br />{{result.description}}<br />
+      <button ng-click="search.onRemove({index: $index});">Don't want this one!</button>
+    </li>
+  </ol>
+  </div>
+  <div ng-if="search.isEmpty()" class="row">
+    <h2 class="error">Nothing found!</h2>
+  </div>
+</div>
